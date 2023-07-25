@@ -21,7 +21,7 @@ export class Login extends Component {
                     <MDBCol sm='6'>
                         <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
                             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Log in</h3>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
+                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg" placeholder='Введите свой email'/>
                             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
                             <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg'>Login</MDBBtn>
                             <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="/notfound">Forgot your password?</a></p>
