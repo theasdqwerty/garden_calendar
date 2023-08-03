@@ -1,0 +1,10 @@
+.border{
+    border: 1px solid gray;
+    padding: 0 10px 0 10px;
+}
+.select{
+    border: none;
+}
+.temp {
+    width: 60px;
+}

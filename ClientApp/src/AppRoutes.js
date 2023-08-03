@@ -4,6 +4,10 @@ import { Home } from "./components/homePage/Home";
 import {Login} from "./components/Login";
 import {Registration} from "./components/Registration";
 import {NotFound} from "./components/NotFound";
+import {ProfilePage} from "./components/prifilePage/ProfilePage";
+import {UserProfile} from "./components/prifilePage/userPrifile/UserProfile";
+import {UserGarden} from "./components/prifilePage/userGarden/UserGarden";
+import {UserSettings} from "./components/prifilePage/userSettings/UserSettings";
 
 const AppRoutes = [
   {
@@ -29,6 +33,18 @@ const AppRoutes = [
   {
     path: '/notfound',
     element: <NotFound/>
+  },
+  {
+    path: '/profile',
+    element: <ProfilePage children={<UserProfile/>}/>
+  },
+  {
+    path: '/profile/garden',
+    element: <ProfilePage children={<UserGarden/>}/>
+  },
+  {
+    path: '/profile/settings',
+    element: <ProfilePage children={<UserSettings/>}/>
   }
 ];
 

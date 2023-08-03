@@ -1,0 +1,17 @@
+.headerContainer{
+    display: flex;
+    margin: 75px 0 50px 50px;
+}
+.weatherContainer{
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.headerButton{
+    background-color: #0dcaf0;
+    width: 156px;
+    height: 46px;
+    border-radius: 11px;
+    border: 1px solid #0dcaf0;
+    margin-left: 30px;
+}
