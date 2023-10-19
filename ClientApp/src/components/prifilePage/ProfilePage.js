@@ -6,7 +6,6 @@ export const ProfilePage = ({children}) => {
         <section className={style.section}>
             <ProfileMenu/>
             <div className={style.main}>
-
                 {children}
             </div>
         </section>

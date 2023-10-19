@@ -3,18 +3,18 @@ import {NavLink} from 'react-router-dom';
 
 export const ProfileMenu = () => {
     return (
-        <div >
+        <div>
             <nav className={style.main}>
-                <span>
-                    <NavLink to='/profile'>Профиль</NavLink>
-                </span>
-                <span>
-                     <NavLink to='/profile/garden'>Мой огород</NavLink>
-                </span>
-                <span>
-                    <NavLink to='/profile/settings'>Настройки</NavLink>
-                </span>
-                <span>Выход</span>
+                <NavLink to='/profile'>
+                        <span className={style.link}> Профиль </span>
+                </NavLink>
+                <NavLink to='/profile/garden'>
+                          <span className={style.link}>   Мой огород  </span>
+                </NavLink>
+                <NavLink to='/profile/settings'>
+                         <span className={style.link}>  Настройки </span>
+                </NavLink>
+                <span className={style.link}>Выход</span>
             </nav>
         </div>
     )

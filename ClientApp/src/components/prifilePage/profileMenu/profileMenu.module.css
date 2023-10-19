@@ -1,9 +1,25 @@
 .main {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 191px;
     display: flex;
-    border: 1px solid black;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    /*border: 2px solid #006a72;*/
+    margin-top: 25px;
+    text-decoration: none;
+
+}
+.link{
+    display: inline-flex;
+    width: 150px;
+    height: 53px;
+    color:white;
+    text-decoration: none;
+    background-color: #006a72;
+    justify-content: center;
+}
+.link:hover{
+    background-color: white;
+    color: #006a72;
 }

@@ -1,45 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './garden.module.css';
 
-export const Garden = ({vegetables, handleChange, vegetableOptions}) => {
-        return (
-            <div>
-                <table className={style.border}>
-                    <thead>
-                    <tr className={style.border}>
-                        <th className={style.border}>&nbsp;</th>
-                        <th className={`${style.border} ${style.temp}`}>T &#8451;</th>
-                        <th className={style.border}>Нужно полить</th>
-                        <th className={style.border}>Нужны удобрения</th>
-                        <th className={style.border}>Еще какая-то информация</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {vegetables.map((vegetable, index) => (
-                        <tr key={index} className={style.border}>
-                            <td className={style.border}>
-                                <select className={style.select}
-                                    value={vegetable.name}
-                                    onChange={(e) => handleChange(index, 'name', e.target.value)}
-                                >
-                                    <option value="">Выберите овощ</option>
-                                    {vegetableOptions.map((option, i) => (
-                                        <option key={i} value={option}>
-                                            {option}
-                                        </option>
-                                    ))}
-                                </select>
-                            </td>
-                            <td className={style.border}>{vegetable.temperature}</td>
-                            <td className={style.border}>{vegetable.water}</td>
-                            <td className={style.border}>{vegetable.fertilizers}</td>
-                            <td className={style.border}>{vegetable.information}</td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
+export const Garden = () => {
+    const [rows, setRows] = useState([]);
+
+    const handleClick = () => {
+        const newRow = (
+            <tr className={style.tr}>
+                <td className={`${style.row} ${style.rowBody}`}>
+                    <select className={style.list}>
+                        <option defaultValue>Выбери овощ</option>
+                        <option>Огурчик</option>
+                        <option>Помидорка</option>
+                        <option>Тыковка</option>
+                        <option>Петрушечка</option>
+                    </select>
+                </td>
+                <td className={`${style.row} ${style.rowBody}`}>2</td>
+                <td className={`${style.row} ${style.rowBody}`}>3</td>
+                <td className={`${style.row} ${style.rowBody}`}>4</td>
+            </tr>
         );
-    }
-;
-export default Garden;
+        setRows(prevRows => [...prevRows, newRow]);
+    };
+
+    return (
+        <div className={style.block}>
+            <button className={style.button} onClick={handleClick}>+</button>
+            <table className={style.table}>
+                <thead className={style.tableHeadMenu}>
+                <tr className={style.tr}>
+                    <td className={style.row}>
+                        Культура
+                    </td>
+                    <td className={style.row}>
+                        Минимальная температура
+                    </td>
+                    <td className={`${style.row} ${style.row}`}>
+                        Максимальная температура
+                    </td>
+                    <td className={style.row}>
+                        Влажность почвы
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                {rows.map((row, index) => (
+                    <React.Fragment key={index}>{row}</React.Fragment>
+                ))}
+                </tbody>
+            </table>
+        </div>
+    );
+};

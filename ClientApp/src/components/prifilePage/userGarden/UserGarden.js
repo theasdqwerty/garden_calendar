@@ -3,45 +3,39 @@ import style from './UserGarden.module.css';
 import { Garden } from './garden/Garden';
 import Weather from "../weather/Weather";
 
-const vegetableOptions = ['Капуста', 'Картоха', 'Свекла', 'Огурчик'];
-
 export const UserGarden = () => {
+    const [lines, setLines] = useState([]);
+    const [selectedGardenIndex, setSelectedGardenIndex] = useState(null);
 
-    const [vegetables, setVegetables] = useState([
-        { name: 'Капуста', temperature: '-', water: '-', fertilizers: '-', information: '-' }
+    const addLine = () => {
+        const gardenNumber = lines.length + 1;
+        setLines([...lines, <div onClick={() => handleGardenClick(lines.length)} key={lines.length}>
+            New Garden{gardenNumber}
+        </div>]);
+    };
 
-    ]);
-    const addRow = () => {
-        setVegetables([
-            ...vegetables,
-            { name: '', temperature: '-', water: '-', fertilizers: '-', information: '-' },
-        ]);
+    const handleGardenClick = (index) => {
+        setSelectedGardenIndex(index);
     };
-    const handleChange = (index, field, value) => {
-        const updatedVegetables = [...vegetables];
-        updatedVegetables[index][field] = value;
-        setVegetables(updatedVegetables);
-    };
+
     return (
         <div>
-            <div className={style.weatherContainer}>
-                <h1>Мой огород</h1>
+            <section className={style.sectionUseGarden}>
                 <div>
-                    Температура сегодня
-                    <div>
-                        <Weather/>
+                    <button className={style.buttonAdd} onClick={addLine}>Add Garden</button>
+                </div>
+                {lines.map((line, index) => (
+                    <div key={index}>
+                        <button
+                            className={index === selectedGardenIndex ? style.selectedButton : style.button}
+                            onClick={() => handleGardenClick(index)}
+                        >
+                            New Garden{index + 1}
+                        </button>
+                        {selectedGardenIndex === index && <Garden />}
                     </div>
-                </div>
-            </div>
-
-            <div>
-                <div className={style.headerContainer}>
-                    <h2>Добавить грядку</h2>
-                    <button className={style.headerButton} onClick={addRow}>Добавить</button>
-                </div>
-                <Garden vegetables={vegetables} handleChange={handleChange} vegetableOptions={vegetableOptions} />
-            </div>
+                ))}
+            </section>
         </div>
     );
 };
-export default UserGarden;
