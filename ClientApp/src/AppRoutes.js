@@ -4,10 +4,10 @@ import { Home } from "./components/homePage/Home";
 import {Login} from "./components/Login";
 import {Registration} from "./components/Registration";
 import {NotFound} from "./components/NotFound";
-import {ProfilePage} from "./components/prifilePage/ProfilePage";
-import {UserProfile} from "./components/prifilePage/userPrifile/UserProfile";
-import {UserGarden} from "./components/prifilePage/userGarden/UserGarden";
-import {UserSettings} from "./components/prifilePage/userSettings/UserSettings";
+import {ProfilePage} from "./components/profilePage/ProfilePage";
+import {UserProfile} from "./components/profilePage/userProfile/UserProfile";
+import {UserGarden} from "./components/profilePage/userGarden/UserGarden";
+import {UserSettings} from "./components/profilePage/userSettings/UserSettings";
 
 const AppRoutes = [
   {
