@@ -11,9 +11,30 @@ import fliverPNG from '../../image/flowersPNG.png'
 import musgroomPNG from '../../image/mushroomsPNG.png'
 import berryPNG from '../../image/berriesPNG.png'
 import family from '../../image/family.jpg'
+import {Modal} from "../modal/Modal";
 
 export class Home extends Component {
     static displayName = Home.name;
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: false
+        };
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
+        this.ErrorText = 'Error 404 овощах и фруктах вы получите совершенно уникальный календарь, который подходит именно для вас'
+    }
+
+    showModal = () => {
+        this.setState({ show: true });
+    };
+
+    hideModal = () => {
+        this.setState({ show: false });
+    };
+
+
 
     render() {
         return (
@@ -35,6 +56,7 @@ export class Home extends Component {
             // </div>
             <section>
                 {/*<h1>Календарь садовода</h1>*/}
+
                 <div className={style.block}>
                     <div className={style.headerBlock}>
                         <div className={style.headerTextBlock}>
@@ -42,14 +64,18 @@ export class Home extends Component {
                             <p className={style.headerParagraph}>Основываясь на выбранных вами овощах и фруктах вы
                                 получите совершенно уникальный
                                 календарь, который подходит именно для вас</p>
-                            <button className={style.headerButton}>Создать</button>
+
+                            <Modal show={this.state.show} handleClose={this.hideModal}>
+                                <p>{this.ErrorText}</p>
+                            </Modal>
+                            <button onClick={this.showModal} className={style.headerButton}>Создать</button>
                         </div>
-                        <div>
+                        <div className={style.containerImage}>
                             <img className={style.headerImage} src={ovoshi} alt='овощи'/>
                         </div>
                     </div>
                     <div className={style.headerBlock}>
-                        <div>
+                        <div className={style.containerImage}>
                             <img className={style.headerImage} src={image1} alt='овощи'/>
                         </div>
                         <div className={style.headerTextBlock}>
@@ -133,33 +159,35 @@ export class Home extends Component {
                     <div className={style.commentList}>
                         <div className={style.commentItem}>
                             <h3>Посадила тыкву выросла карета!!!</h3>
-                            <p>Это невероятно, посадила семена тыквы, прислушивалась всех рекомендаций календарика и
+                            <p className={style.commentParag}>Это невероятно, посадила семена тыквы, прислушивалась всех рекомендаций календарика и
                                 выросла гигантская 2ух метровая тыква, до сих пор с мужем не можем поверить.</p>
-                            <p>Вероника Степанова</p>
+                            <p className={style.commentUser}> Вероника Степанова</p>
                         </div>
                         <div className={style.commentItem}>
                             <h3>Бой с колорадами</h3>
-                            <p> Год назад посадили картошку, вроде бы все хорошо было, да вот только колорады все поели,
+                            <p className={style.commentParag}> Год назад посадили картошку, вроде бы все хорошо было, да вот только колорады все поели,
                                 но у соседей все было хорошо мы очень удивились как же так и тут они рассказали нам про
                                 этот чудесный календарь, теперь благодаря правильному уходу и своевременным напоминаниям
                                 вредители нам не страшны, в погребе уже места нет все картохой завалено. </p>
-                            <p> Дед Максим</p>
+                            <p className={style.commentUser}> Дед Максим</p>
                         </div>
                         <div className={style.commentItem}>
                             <h3>Правильные пчелы</h3>
-                            <p>Эта удивительная история не случилась бы, если не этот чудесный календарик. Благодаря
+                            <p className={style.commentParag}>Эта удивительная история не случилась бы, если не этот чудесный календарик. Благодаря
                                 советам у нас выросли изумительные цветы на их аромат слетелись все пчелы и построили
                                 рядом с домом себе гнездо. Пчелки добрые и мирные спокойно подпускают к себе и лают
                                 забирать свой мед. Спасибо этому сайтику за такое невероятное соседство.</p>
-                            <p>Диана Врухина</p>
+                            <p className={style.commentUser}>Диана Врухина</p>
                         </div>
                     </div>
                 </div>
-                <div className={style.insert}>
-                    <h2> Готовы к нам присоединиться?</h2>
-                    <div className={style.buttonContainer}>
-                        <button className={style.whiteButton}>Войти</button>
-                        <button className={style.blueButton}>Зарегистрироваться</button>
+                <div className={style.insertContainer}>
+                    <div className={style.insert}>
+                        <h2> Готовы к нам присоединиться?</h2>
+                        <div className={style.buttonContainer}>
+                            <button className={style.whiteButton}>Войти</button>
+                            <button className={style.blueButton}>Зарегистрироваться</button>
+                        </div>
                     </div>
                 </div>
             </section>

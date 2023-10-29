@@ -1,12 +1,17 @@
 .headerBlock {
     display: flex;
-    max-width: 1440px;
+    /*max-width: 1440px;*/
     justify-content: center;
     /*margin-top: 50px;*/
 }
 
+.containerImage {
+    width: 50%;
+}
 .headerImage {
-    width: 600px;
+    /*width: 600px;*/
+    width: -webkit-fill-available;
+    object-fit: cover
 }
 
 .block {
@@ -15,7 +20,8 @@
 }
 
 .headerTextBlock {
-    width: 600px;
+    /*width: 600px;*/
+    width: 50%;
     background-color: rgb(13 202 240 / 11%);
     display: flex;
     flex-direction: column;
@@ -29,15 +35,17 @@
 
 .headerParagraph {
     width: 420px;
+    font-size: 25px;
 }
 
 .headerButton {
     background-color: #0dcaf0;
-    width: 156px;
-    height: 46px;
+    width: 238px;
+    height: 67px;
     border-radius: 11px;
     border: 1px solid #0dcaf0;
     margin-top: 80px;
+    font-size: 20px;
 }
 
 .headerButton:hover {
@@ -46,8 +54,9 @@
 
 .infoImg {
     border-radius: 10px 10px 0 0;
-    width: 200px;
-    height: 130px;
+    width: 273px;
+    height: 224px;
+    object-fit: cover
 }
 
 .infoList {
@@ -56,8 +65,9 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
 
@@ -108,6 +118,7 @@
 
 .postscript {
     padding-right: 82px;
+    font-size: 20px;
 }
 
 .icon {
@@ -115,7 +126,7 @@
 }
 
 .insert {
-    width: 1440px;
+    /*width: 1440px;*/
     height: 250px;
     background-color: rgb(13 202 240 / 30%);
     margin-bottom: 150px;
@@ -164,7 +175,7 @@
 }
 
 .forumBlock {
-    margin-bottom: 300px;
+    margin-bottom: 200px;
 }
 
 .forumContainer {
@@ -185,12 +196,23 @@
 .commentList{
     margin-top: 80px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .commentItem{
-    width: 300px;
+    width: 30%;
     /*border: 1px solid #0dcaf0;*/
     box-shadow: 1px 2px 4px #585858;
     padding: 20px;
+}
+.insertContainer{
+
+}
+
+.commentParag{
+    font-size: 25px;
+}
+.commentUser{
+    font-size: 20px;
+    font-weight: 600;
 }
