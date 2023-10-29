@@ -20,7 +20,7 @@ export class Registration extends Component {
 
     constructor() {
         super();
-
+        
         this.refLogin = React.createRef();
         this.refEmail = React.createRef();
         this.refPassword = React.createRef();
