@@ -1,19 +1,10 @@
 import React, {Component} from "react";
 import {Navigate} from 'react-router-dom'
-// import { browserHistory } from 'react-router-dom';
 import './Login.css'
-import {
-    MDBBtn,
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBIcon,
-    MDBInput
-} from 'mdb-react-ui-kit';
 
 import logo from './../image/logo.jpg'
-import {Await, redirect} from "react-router-dom";
 import {Button, Col, Container, Input, Row} from "reactstrap";
+import Swal from "sweetalert2";
 
 export class Registration extends Component {
     static displayName = Registration.name;
@@ -21,29 +12,26 @@ export class Registration extends Component {
 
     constructor() {
         super();
-        
-        this.refLogin = React.createRef();
-        this.refEmail = React.createRef();
-        this.refPassword = React.createRef();
-        this.refRepeatPassword = React.createRef();
         this.registrationRequest = this.registrationRequest.bind(this);
     }
     
     async registrationRequest(e) {
         e.preventDefault();
+        
+        const repeatPassword = document.getElementById('repeatPasswordId').value ?? "";
 
-        if (this.refRepeatPassword === undefined)
-            console.log("undef")
-
-        let repeatPassword = this.refRepeatPassword.current.value;
         var user = {
-            userName: this.refLogin.current.value,
-            email: this.refEmail.current.value,
-            password: this.refPassword.current.value,
+            userName: document.getElementById('loginId').value ?? "",
+            email: document.getElementById('emailId').value ?? "",
+            password: document.getElementById('passwordId').value ?? ""
         }
 
         if (user.password !== repeatPassword) {
-            alert("Пароли не совпадают")
+            Swal.fire({
+                title: "Информация",
+                text: "Пароли не совпадают",
+                icon: "warning"
+            })
             return
         }
 
@@ -55,42 +43,42 @@ export class Registration extends Component {
             body: JSON.stringify(user)
         });
 
+        var jsonData = await response.json()
         if (!response.ok) {
-            var jsonErrors = await response.json()
-            let msg = jsonErrors.join('\n');
-            alert(msg)
+            Swal.fire({
+                title: "Информация",
+                text: jsonData.join('\n'),
+                icon: "error"
+            });
             return
         }
 
-        var json = await response.json()
-        localStorage.setItem('accessToken', json.token)
+        localStorage.setItem('accessToken', jsonData.token)
         
         this.setState({navigate: true});
     }
 
     render() {
         let {navigate} = this.state;
+        if (navigate)
+            return (<Navigate to="/profile" replace={true} />)
+        else
         return (
-            <>
-            {navigate && (
-                <Navigate to="/profile" replace={true} />
-            )}
             <Container fluid>
                 <Row>
                     <Col sm='6'>
                         <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
                             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Регистрация</h3>
                             <Input placeholder="Введите свой логин" className='mb-4 mx-5 w-100' ref={this.refLogin} label='Login'
-                                      id='formControlLogin' type='text' size="lg"/>
+                                      id='loginId' type='text'/>
                             <Input placeholder="Введите ваш адрес электронной почты" className='mb-4 mx-5 w-100' ref={this.refEmail} label='Email address'
-                                      id='formControlEmail' type='email' size="lg"/>
+                                      id='emailId' type='email'/>
                             <Input placeholder="Введите ваш пароль" className='mb-4 mx-5 w-100' ref={this.refPassword} label='Password'
-                                      id='formControlPassword' type='password' size="lg"/>
+                                      id='passwordId' type='password'/>
                             <Input placeholder="Повторите свой пароль" className='mb-4 mx-5 w-100' ref={this.refRepeatPassword}
-                                      label='Confirm your password' id='formControlPasswordRepeat' type='password'
-                                      size="lg"/>
+                                      label='Confirm your password' id='repeatPasswordId' type='password'/>
                             <Button onClick={this.registrationRequest} type={"submit"} className="mb-4 px-5 mx-5 w-100"
-                                    color='info' size='lg'>Регистрация</Button>
+                                    color='info'>Регистрация</Button>
                         </div>
                     </Col>
                     <Col sm='6' className='d-none d-sm-block px-0'>
@@ -99,7 +87,6 @@ export class Registration extends Component {
                     </Col>
                 </Row>
             </Container>
-            </>
         )
     }
 }
