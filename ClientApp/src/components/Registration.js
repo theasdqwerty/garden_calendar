@@ -13,6 +13,7 @@ import {
 
 import logo from './../image/logo.jpg'
 import {Await, redirect} from "react-router-dom";
+import {Button, Col, Container, Input, Row} from "reactstrap";
 
 export class Registration extends Component {
     static displayName = Registration.name;
@@ -74,32 +75,30 @@ export class Registration extends Component {
             {navigate && (
                 <Navigate to="/profile" replace={true} />
             )}
-            <MDBContainer fluid>
-                <MDBRow>
-                    <MDBCol sm='6'>
+            <Container fluid>
+                <Row>
+                    <Col sm='6'>
                         <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
-                            <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Registration</h3>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' ref={this.refLogin} label='Login'
+                            <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Регистрация</h3>
+                            <Input placeholder="Введите свой логин" className='mb-4 mx-5 w-100' ref={this.refLogin} label='Login'
                                       id='formControlLogin' type='text' size="lg"/>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' ref={this.refEmail} label='Email address'
+                            <Input placeholder="Введите ваш адрес электронной почты" className='mb-4 mx-5 w-100' ref={this.refEmail} label='Email address'
                                       id='formControlEmail' type='email' size="lg"/>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' ref={this.refPassword} label='Password'
+                            <Input placeholder="Введите ваш пароль" className='mb-4 mx-5 w-100' ref={this.refPassword} label='Password'
                                       id='formControlPassword' type='password' size="lg"/>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' ref={this.refRepeatPassword}
+                            <Input placeholder="Повторите свой пароль" className='mb-4 mx-5 w-100' ref={this.refRepeatPassword}
                                       label='Confirm your password' id='formControlPasswordRepeat' type='password'
                                       size="lg"/>
-                            <MDBBtn onClick={this.registrationRequest} type={"submit"} className="mb-4 px-5 mx-5 w-100"
-                                    color='info' size='lg'>Registration</MDBBtn>
+                            <Button onClick={this.registrationRequest} type={"submit"} className="mb-4 px-5 mx-5 w-100"
+                                    color='info' size='lg'>Регистрация</Button>
                         </div>
-                    </MDBCol>
-
-                    <MDBCol sm='6' className='d-none d-sm-block px-0'>
+                    </Col>
+                    <Col sm='6' className='d-none d-sm-block px-0'>
                         <img src={logo}
                              alt="Login image" className="w-100" style={{objectFit: 'cover', objectPosition: 'left'}}/>
-                    </MDBCol>
-
-                </MDBRow>
-            </MDBContainer>
+                    </Col>
+                </Row>
+            </Container>
             </>
         )
     }

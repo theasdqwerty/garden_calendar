@@ -25,25 +25,22 @@ export class NavMenu extends Component {
     return (
       <header>
         <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} to="/">Календарь садовода</NavbarBrand>
+          <NavbarBrand tag={Link} className='fs-1 font-monospace' to="/">Календарь садовода</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
             <ul className="navbar-nav flex-grow">
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">Домой</NavLink>
+                <NavLink tag={Link} className="fs-3 text-dark" to="/">Домой</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/login">Войти</NavLink>
+                <NavLink tag={Link} className="fs-3 text-dark" to="/login">Войти</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/registration">Регистрация</NavLink>
+                <NavLink tag={Link} className="fs-3 text-dark" to="/registration">Регистрация</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/profile">Профиль</NavLink>
+                <NavLink tag={Link} className="fs-3 text-dark" to="/profile">Профиль</NavLink>
               </NavItem>
-              {/*<NavItem>*/}
-              {/*  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>*/}
-              {/*</NavItem>*/}
             </ul>
           </Collapse>
         </Navbar>
