@@ -11,52 +11,15 @@ import fliverPNG from '../../image/flowersPNG.png'
 import musgroomPNG from '../../image/mushroomsPNG.png'
 import berryPNG from '../../image/berriesPNG.png'
 import family from '../../image/family.jpg'
-import {Modal} from "../modal/Modal";
 
 export class Home extends Component {
     static displayName = Home.name;
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false
-        };
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
-        this.ErrorText = 'Error 404 овощах и фруктах вы получите совершенно уникальный календарь, который подходит именно для вас'
-    }
-
-    showModal = () => {
-        this.setState({ show: true });
-    };
-
-    hideModal = () => {
-        this.setState({ show: false });
-    };
 
 
 
     render() {
         return (
-            // <div>
-            //   <h1>Garden calendar</h1>
-            //   <p>Welcome to your new single-page application, built with:</p>
-            //   <ul>
-            //     <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-            //     <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-            //     <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-            //   </ul>
-            //   <p>To help you get started, we have also set up:</p>
-            //   <ul>
-            //     <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-            //     <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-            //     <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-            //   </ul>
-            //   <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-            // </div>
             <section>
-                {/*<h1>Календарь садовода</h1>*/}
-
                 <div className={style.block}>
                     <div className={style.headerBlock}>
                         <div className={style.headerTextBlock}>
@@ -65,18 +28,16 @@ export class Home extends Component {
                                 получите совершенно уникальный
                                 календарь, который подходит именно для вас</p>
 
-                            <Modal show={this.state.show} handleClose={this.hideModal}>
-                                <p>{this.ErrorText}</p>
-                            </Modal>
-                            <button onClick={this.showModal} className={style.headerButton}>Создать</button>
+
+                            <button className={style.headerButton}>Создать</button>
                         </div>
                         <div className={style.containerImage}>
-                            <img className={style.headerImage} src={ovoshi} alt='овощи'/>
+                            <img className={`${style.headerImage} ${style.headerImageOne}` } src={ovoshi} alt='овощи'/>
                         </div>
                     </div>
                     <div className={style.headerBlock}>
                         <div className={style.containerImage}>
-                            <img className={style.headerImage} src={image1} alt='овощи'/>
+                            <img className={`${style.headerImage}  ${style.headerImageTwo}`} src={image1} alt='овощи'/>
                         </div>
                         <div className={style.headerTextBlock}>
                             <h2 className={style.headerTitle}>Узнайте больше о том как сажать картоху</h2>

@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import {  NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import styleNavMenu from './NavMenu.module.css'
 
 export class NavMenu extends Component {
-  static displayName = NavMenu.name;
-
-  constructor (props) {
-    super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
 
   render() {
     return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
-          <NavbarBrand tag={Link} className='fs-1 font-monospace' to="/">Календарь садовода</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="fs-3 text-dark" to="/">Домой</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="fs-3 text-dark" to="/login">Войти</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="fs-3 text-dark" to="/registration">Регистрация</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="fs-3 text-dark" to="/profile">Профиль</NavLink>
-              </NavItem>
-            </ul>
-          </Collapse>
-        </Navbar>
+      <header className={styleNavMenu.header}>
+          <div className={styleNavMenu.mainContainer}>
+              <div className={styleNavMenu.titleContainer}>
+                  <Link className={`${styleNavMenu.title}`} to="/">
+                      Календарь садовода
+                  </Link>
+              </div>
+              <div className={styleNavMenu.navContainer}>
+                  <div className={styleNavMenu.ulContainer}>
+                      <button className={styleNavMenu.listElement}>
+                          <NavLink tag={Link} className={` fs-3 `} to="/">Домой</NavLink>
+                      </button>
+                      <button className={styleNavMenu.listElement}>
+                          <NavLink tag={Link} className={`fs-3 text-dark`} to="/login">Войти</NavLink>
+                      </button>
+                      <button className={styleNavMenu.listElement}>
+                          <NavLink tag={Link} className={`fs-3 text-dark`} to="/registration">Регистрация</NavLink>
+                      </button>
+
+                      <button className={styleNavMenu.listElement}>
+                          <NavLink tag={Link} className={`fs-3 text-dark`} to="/profile">Профиль</NavLink>
+                      </button>
+                  </div>
+              </div>
+          </div>
       </header>
     );
   }
