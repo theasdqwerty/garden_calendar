@@ -5,7 +5,7 @@ export const ProfilePage = ({children}) => {
     return (
         <section className={style.section}>
             <ProfileMenu/>
-            <div className={style.main}>
+            <div >
                 {children}
             </div>
         </section>

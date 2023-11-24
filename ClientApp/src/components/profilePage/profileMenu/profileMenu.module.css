@@ -1,55 +1,187 @@
-.main {
-    width: 150px;
-    height: 191px;
+/*.main {*/
+/*    width: 150px;*/
+/*    height: 191px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    !*border: 2px solid #006a72;*!*/
+/*    margin-top: 25px;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.link{*/
+/*    display: inline-flex;*/
+/*    width: 150px;*/
+/*    height: 53px;*/
+/*    color:white;*/
+/*    text-decoration: none;*/
+/*    background-color: #006a72;*/
+/*    justify-content: center;*/
+/*}*/
+/*.link:hover{*/
+/*    background-color: white;*/
+/*    color: #006a72;*/
+/*}*/
+
+/*.tablink {*/
+/*    background-color: #555;*/
+/*    color: white;*/
+/*    float: left;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    cursor: pointer;*/
+/*    padding: 14px 16px;*/
+/*    font-size: 17px;*/
+/*    width: 25%;*/
+/*}*/
+
+/*!* Change background color of buttons on hover *!*/
+/*.tablink:hover {*/
+/*    background-color: #777;*/
+/*}*/
+
+/*!* Set default styles for tab content *!*/
+/*.tabcontent {*/
+/*    color: white;*/
+/*    display: none;*/
+/*    padding: 50px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*!* Style each tab content individually *!*/
+/*#London {background-color:red;}*/
+/*#Paris {background-color:green;}*/
+/*#Tokyo {background-color:blue;}*/
+/*#Oslo {background-color:orange;}*/
+
+
+/*=============================================================================*/
+.mainSection {
+    width: 1440px;
+
+    margin-top: 70px;
+    /*border: 1px solid black;*/
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /*border: 2px solid #006a72;*/
-    margin-top: 25px;
-    text-decoration: none;
-}
-.link{
-    display: inline-flex;
-    width: 150px;
-    height: 53px;
-    color:white;
-    text-decoration: none;
-    background-color: #006a72;
-    justify-content: center;
-}
-.link:hover{
-    background-color: white;
-    color: #006a72;
+    justify-content: space-evenly;
+    /*justify-content: center;*/
+
 }
 
-.tablink {
-    background-color: #555;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
+.userView {
+    min-width: 450px;
+    border-radius: 5px;
+    border: 1px solid rgba(59, 185, 233, 0.41);
 }
 
-/* Change background color of buttons on hover */
-.tablink:hover {
-    background-color: #777;
+.userInfo {
+    min-width: 450px;
+    border-radius: 5px;
+    border: 1px solid rgba(59, 185, 233, 0.41);
 }
 
-/* Set default styles for tab content */
-.tabcontent {
-    color: white;
-    display: none;
-    padding: 50px;
+.viewHeader {
     text-align: center;
+    font-size: 1.75rem;
+    border-bottom: 1px solid rgba(59, 185, 233, 0.41);
 }
 
-/* Style each tab content individually */
-#London {background-color:red;}
-#Paris {background-color:green;}
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
+.viewAvatar {
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(59, 185, 233, 0.41);
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.avatar {
+    border: 1px solid rgba(59, 185, 233, 0.41);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.avatar:hover {
+    opacity: 0.5;
+}
+
+.avatarButton {
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+}
+
+.avatarButton:hover {
+    cursor: pointer;
+    background-image: url("../../../image/pensil.png");
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.ViewData {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(59, 185, 233, 0.41);
+}
+
+.viewAbout {
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.viewAboutText {
+    text-align: center;
+    font-size: 20px;
+}
+
+.userInfoList {
+    width: -webkit-fill-available;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+
+}
+
+.userInfoListItem {
+    font-weight: 500;
+    background-color: rgba(59, 185, 233, 0.41);
+    padding: 7px 0  7px 7px;
+    border-bottom: 1px solid rgba(59, 185, 233, 0.8);
+}
+.userInfoListItem:first-child{
+    border-top: 1px solid rgba(59, 185, 233, 0.8);
+}
+
+
+.userInfoLists {
+    margin-top: 30px;
+    display: flex;
+}
+
+.userInfoSubListItem {
+    border: none;
+    padding: 7px 0  7px 7px;
+    border-bottom: 1px solid rgba(59, 185, 233, 0.8);
+}
+.userInfoSubListItem:first-child{
+    border-top: 1px solid rgba(59, 185, 233, 0.8);
+}
+.buttonsList{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    width: 100px;
+    background-color: #0dcaf0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.button:hover{
+   opacity: 0.5;
+}
+
+
