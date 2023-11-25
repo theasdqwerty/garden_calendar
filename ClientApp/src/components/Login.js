@@ -65,7 +65,8 @@ export class Login extends Component {
             return;
         }
         
-        localStorage.setItem("accessToken", jsonData.token)
+        localStorage.setItem("accessToken", jsonData.Token)
+        localStorage.setItem("userId", jsonData.UserId)
         this.setState({navigate: true});
     }
     
