@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Marck Script';
+    src: url("../fonts/MarckScript-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
 .header {
     width: 1600px;
     margin: 0 auto;
@@ -31,31 +37,32 @@
 }
 
 .title {
+    font-family: "Marck Script", Arial, sans-serif;
     text-decoration: none;
     color: black;
-    font-size: 55px;
+    font-size: 70px;
     /*background-color: #0dcaf0;*/
     height: 100px;
+    cursor: default;
 }
 
 .titleContainer {
     height: 100px;
     /*background-color: #0dcaf0;*/
     padding: 0 20px ;
-    border: 2px solid  #0dcaf0;
+    /*border: 2px solid  #0dcaf0;*/
     border-radius:10px;
 }
-.titleContainer:hover{
-    background-color: #0dcaf0;
-}
+
 
 .listElement{
+    font-family: "Marck Script", Arial, sans-serif;
     width: 178px;
     border: 2px solid #0dcaf0;
     background-color: white;
     padding: 8px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 

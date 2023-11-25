@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Marck Script';
+    src: url("../../fonts/MarckScript-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
 .section{
     display: flex;
     flex-direction: column;
@@ -49,7 +54,15 @@
 }
 
 .headerTitle {
+    font-family: "Marck Script", Arial, sans-serif;
     width: 420px;
+    font-weight: bold;
+    font-size: 40px;
+}
+.info{
+    font-family: "Marck Script", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 .headerParagraph {
@@ -157,17 +170,21 @@
 }
 
 .whiteButton {
+    font-family: "Marck Script", Arial, sans-serif;
+    font-size: 30px;
     border: 1px solid #0dcaf0;
     background-color: white;
     color: #0dcaf0;
-    width: 156px;
+    padding: 0 10px;
     height: 46px;
     border-radius: 11px;
 }
 
 .blueButton {
+    font-family: "Marck Script", Arial, sans-serif;
+    font-size: 30px;
     background-color: #0dcaf0;
-    width: 176px;
+    padding: 0 10px;
     height: 46px;
     border-radius: 11px;
     border: 1px solid #0dcaf0;
@@ -175,6 +192,7 @@
 }
 
 .buttonContainer {
+    gap: 10px;
     width: 351px;
     display: flex;
     justify-content: space-between

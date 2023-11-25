@@ -3,6 +3,7 @@ import {NavLink} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
 import styleNavMenu from './NavMenu.module.css'
+import  '../fonts/MarckScript-Regular.ttf'
 
 export const NavMenu = () => {
     const [isAuth, setIsAuth] = useState(false);
@@ -12,11 +13,11 @@ export const NavMenu = () => {
     return (
         <header className={styleNavMenu.header}>
             <div className={styleNavMenu.mainContainer}>
-                {/*<div className={styleNavMenu.titleContainer}>*/}
-                {/*    <Link className={`${styleNavMenu.title}`} to="/">*/}
-                {/*        Календарь садовода*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
+                <div className={styleNavMenu.titleContainer}>
+                    <h1 className={`${styleNavMenu.title}`} >
+                        Календарь садовода
+                    </h1>
+                </div>
                 <button onClick={onClick}>
                     is Auth
                 </button>
