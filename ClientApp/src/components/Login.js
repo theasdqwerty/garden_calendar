@@ -12,7 +12,6 @@ export class Login extends Component {
     
     constructor() {
         super();
-        
         this.refLogin = React.createRef();
         this.refPassword = React.createRef();
         this.loginHandler = this.loginHandler.bind(this);
@@ -45,6 +44,9 @@ export class Login extends Component {
             return;
         }
         
+        // console.log(auchModel);
+        // return;
+        
         let response = await fetch('https://localhost:7135/api/Authentication/login', 
             {
                 method: 'POST',
@@ -65,8 +67,9 @@ export class Login extends Component {
             return;
         }
         
-        localStorage.setItem("accessToken", jsonData.Token)
-        localStorage.setItem("userId", jsonData.UserId)
+        localStorage.setItem("accessToken", jsonData.token)
+        localStorage.setItem("userId", jsonData.userId)
+        
         this.setState({navigate: true});
     }
     

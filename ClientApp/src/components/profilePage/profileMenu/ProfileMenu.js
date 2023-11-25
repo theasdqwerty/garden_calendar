@@ -5,56 +5,70 @@ import Swal from "sweetalert2";
 
 export const ProfileMenu = () => {
     const [user, setUser] = useState({})
+    console.log("userModel ", user)
     
     // Инициализация данных значения пользователя
     useEffect(() => {
-        const userId = localStorage.getItem('UserId');
+        const userId = localStorage.getItem('userId');
         
-        // Получение id пользователя по токену
-        fetch(`http://localhost:7135/user/${userId}`, {
+        // UserModel для инициализации полей страницы аккаунта
+        fetch(`https://localhost:7135/api/Users/${userId}`, {
             method: 'GET',
             headers: {
-                'Authorization': localStorage.getItem('Token')
+                'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
             }
         })
             // Инициализация данных пользователя
-            .then(reponse => setUser( reponse.json()))
+            .then(responce => responce.ok ? responce.json() : {})
+            .then(json => setUser(json))
             // Обработка исключения
             .catch(error => console.log(error))
     }, [])
     
     const changeUserSettings = async (e) => {
         e.preventDefault()
-
+        
         var userModel =
             {
-                name: document.getElementById('nameId').value ?? "",
+                id: document.getElementById('userId').value ?? "",
+                userName: document.getElementById('userNameId').value ?? "",
+                firstName: document.getElementById('firstNameId').value ?? "",
                 lastName: document.getElementById('lastNameId').value ?? "",
-                sureName: document.getElementById('sureNameId').value ?? "",
-                phone: document.getElementById('phoneId').value ?? "",
-                email: document.getElementById('emailId').value ?? ""
+                secondName: document.getElementById('secondNameId').value ?? "",
+                phoneNumber: document.getElementById('phoneNumberId').value ?? "",
+                email: document.getElementById('emailId').value ?? "",
+                password: document.getElementById('passwordId').value ?? ""
             }
+            console.log('changeUserSetting',  userModel)
             
-            let response = await fetch(`http://localhost:7135/user/${user.UserId}`, {
-                method: 'POST',
+        console.log("token = ", localStorage.getItem('accessToken'))
+
+        let response = await fetch(`https://localhost:7135/api/Users/${userModel.id}`, {
+                method: 'PUT',
                 headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
                     'Content-Type': 'application/json',
                 },  
                 body: JSON.stringify(userModel)
             })
 
-        let data = await response.json()
         if (!response.ok)
         {
             Swal.fire(
                 {
                     title: "Информация",
-                    text: data.join('\n'),
+                    text: "Ошибка сервера",
                     icon: 'error',
                     confirmButtonText: "OK"
                 }
             )
         }
+        else
+        {
+            console.log('Все хорошо')
+        }
+        
+        
     }
 
     return (
@@ -83,31 +97,33 @@ export const ProfileMenu = () => {
                 </h4>
                 <div className={style.userInfoLists}>
                     <ul className={style.userInfoList}>
-                        <li className={style.userInfoListItem}>Телефон:</li>
-                        <li className={style.userInfoListItem}>Email:</li>
                         <li className={style.userInfoListItem}>Имя:</li>
                         <li className={style.userInfoListItem}>Фамилия:</li>
                         <li className={style.userInfoListItem}>Отчество:</li>
+                        <li className={style.userInfoListItem}>Телефон:</li>
+                        <li className={style.userInfoListItem}>Email:</li>
                     </ul>
                     <ul className={style.userInfoList}>
                         <form>
-                            <li><input id='nameId' value={user.name} className={style.userInfoSubListItem} type={'text'}/></li>
-                            <li><input id='lastNameId' value={user.lastName} className={style.userInfoSubListItem} type={'text'}/></li>
-                            <li><input id='sureNameId' value={user.sureName} className={style.userInfoSubListItem} type={'text'}/></li>
-                            <li><input id='phoneId' value={user.phone} className={style.userInfoSubListItem} type={'tel'}
+                            <li><input id='firstNameId' defaultValue={user.firstName ?? ""} className={style.userInfoSubListItem} type={'text'}/></li>
+                            <li><input id='lastNameId' defaultValue={user.lastName ?? ""} className={style.userInfoSubListItem} type={'text'}/></li>
+                            <li><input id='secondNameId' defaultValue={user.secondName ?? ""} className={style.userInfoSubListItem} type={'text'}/></li>
+                            <li><input id='phoneNumberId' defaultValue={user.phoneNumber ?? ""} className={style.userInfoSubListItem} type={'tel'}
                                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 />
                             </li>
-                            <li><input id='emailId' value={user.email} className={style.userInfoSubListItem} type={'email'}/></li>
-                            <li><input id='userId' value={user.userId} style={{display: 'none'}} type={'text'}/></li>
+                            <li><input id='emailId' defaultValue={user.email ?? ""} className={style.userInfoSubListItem} type={'email'}/></li>
+                            <li><input id='userId' defaultValue={user.id ?? ""} style={{display: 'none'}} type={'text'}/></li>
+                            <li><input id='passwordId' defaultValue={user.password ?? ""} style={{display: 'none'}} type={'text'}/></li>
+                            <li><input id='userNameId' defaultValue={user.userName ?? ""} style={{display: 'none'}} type={'text'}/></li>
                         </form>
                     </ul>
 
                 </div>
                 <div className={style.buttonsList}>
-                    <button onClick={changeUserSettings} className={style.button}>Изменить</button>
-                    <button className={style.button}>Сохранить</button>
-                    <button className={style.button}>Отмена</button>
+                    {/*<button className={style.button}>Изменить</button>*/}
+                    <button onClick={changeUserSettings} className={style.button}>Сохранить</button>
+                    {/*<button className={style.button}>Отмена</button>*/}
                 </div>
 
             </div>

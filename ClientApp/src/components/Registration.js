@@ -54,6 +54,7 @@ export class Registration extends Component {
         }
 
         localStorage.setItem('accessToken', jsonData.token)
+        localStorage.setItem('userId', jsonData.userId)
         
         this.setState({navigate: true});
     }
