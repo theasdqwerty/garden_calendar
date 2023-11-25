@@ -36,16 +36,16 @@ const AppRoutes = [
   },
   {
     path: '/profile',
-    element: <ProfilePage children={<UserProfile/>}/>
+    element: <UserProfile/>
   },
   {
     path: '/profile/garden',
-    element: <ProfilePage children={<UserGarden/>}/>
+    element: <UserGarden/>
   },
-  {
-    path: '/profile/settings',
-    element: <ProfilePage children={<UserSettings/>}/>
-  }
+  // {
+  //   path: '/profile/settings',
+  //   element: <ProfilePage children={<UserSettings/>}/>
+  // }
 ];
 
 export default AppRoutes;

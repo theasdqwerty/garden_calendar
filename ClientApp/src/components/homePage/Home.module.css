@@ -1,3 +1,9 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
 .headerBlock {
     display: flex;
     /*max-width: 1440px;*/
@@ -81,6 +87,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    gap: 168px;
 }
 
 
@@ -222,7 +229,7 @@
     padding: 20px;
 }
 .insertContainer{
-
+width: 1600px;
 }
 
 .commentParag{

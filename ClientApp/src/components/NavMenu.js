@@ -12,25 +12,25 @@ export const NavMenu = () => {
     return (
         <header className={styleNavMenu.header}>
             <div className={styleNavMenu.mainContainer}>
-                <div className={styleNavMenu.titleContainer}>
-                    <Link className={`${styleNavMenu.title}`} to="/">
-                        Календарь садовода
-                    </Link>
-                </div>
+                {/*<div className={styleNavMenu.titleContainer}>*/}
+                {/*    <Link className={`${styleNavMenu.title}`} to="/">*/}
+                {/*        Календарь садовода*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
                 <button onClick={onClick}>
                     is Auth
                 </button>
                 <div className={styleNavMenu.navContainer}>
                     <div className={styleNavMenu.ulContainer}>
                         <button className={styleNavMenu.listElement}>
-                           <NavLink tag={Link} className={` fs-3 `} to="/">Домой</NavLink>
+                           <NavLink tag={Link}  to="/">Домой</NavLink>
                         </button>
                         <button className={styleNavMenu.listElement}>
-                            {isAuth ? <NavLink tag={Link} className={`fs-3 text-dark`} to="'/profile/garden"> Мой
-                                огород </NavLink> : <NavLink tag={Link} className={`fs-3 text-dark`} to="/login">Войти</NavLink>}
+                            {isAuth ? <NavLink tag={Link} className={` text-dark`} to="/profile/garden"> Мой
+                                огород </NavLink> : <NavLink tag={Link} className={` text-dark`} to="/login">Войти</NavLink>}
                         </button>
                         <button className={styleNavMenu.listElement}>
-                            {isAuth ? <NavLink tag={Link} className={`fs-3 text-dark`} to="/profile">Профиль</NavLink> : <NavLink tag={Link} className={`fs-3 text-dark`} to="/registration">
+                            {isAuth ? <NavLink tag={Link} className={` text-dark`} to="/profile">Профиль</NavLink> : <NavLink tag={Link} className={` text-dark`} to="/registration">
                                 Регистрация </NavLink>}
                         </button>
                     </div>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './UserGarden.module.css';
-import { Garden } from './garden/Garden';
+import {Garden} from './garden/Garden';
 import Weather from "../weather/Weather";
 
 export const UserGarden = () => {
@@ -22,7 +22,7 @@ export const UserGarden = () => {
         <div>
             <section className={style.sectionUseGarden}>
                 <div>
-                    <button className={style.buttonAdd} onClick={addLine}>Add Garden</button>
+                    <button className={style.buttonAdd} onClick={addLine}>Добавить новый сад</button>
                 </div>
                 {lines.map((line, index) => (
                     <div key={index}>
@@ -30,9 +30,9 @@ export const UserGarden = () => {
                             className={index === selectedGardenIndex ? style.selectedButton : style.button}
                             onClick={() => handleGardenClick(index)}
                         >
-                            New Garden{index + 1}
+                            Сад № {index + 1}
                         </button>
-                        {selectedGardenIndex === index && <Garden />}
+                        {selectedGardenIndex === index && <Garden props={index + 1}/>}
                     </div>
                 ))}
             </section>

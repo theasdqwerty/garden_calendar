@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
-
+.tableBlock{
+    display: flex;
+}
 .border {
     border: 1px solid gray;
     padding: 0 10px 0 10px;
@@ -18,16 +20,15 @@
 
 .block {
     display: flex;
-    margin-left: 270px;
+    right: 300px;
     position: absolute;
     top: 0;
-    margin-top: 130px;
-
+    margin-top: 188px;
 }
 .button{
-    width: 46px;
-    height: 67px;
-    border: 2px solid #006a72;
+    width: 72px;
+    height: 112px;
+    border: 2px solid #0dcaf0;
     background-color: white;
 }
 
@@ -37,8 +38,7 @@
 
 .tableHeadMenu {
     height: 50px;
-    color: white;
-    background-color: #006a72;
+    background-color: #0dcaf0;
 }
 
 .cellHead {
@@ -57,11 +57,12 @@
 
 .row {
     border-right: 1px solid white;
-    flex: 1;
+    flex: 1 1;
     text-align: center;
     align-self: center;
-    height: 67px;
-    padding-top: 13px;
+    height: 112px;
+    padding-top: 34px;
+    font-size: 20px;
 }
 
 .rowBody {

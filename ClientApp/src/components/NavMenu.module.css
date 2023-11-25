@@ -1,13 +1,13 @@
 .header {
     width: 1600px;
     margin: 0 auto;
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    /*box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);*/
     min-height: 100px;
-    background-color: rgb(13 202 240 / 11%);
+    /*background-color: rgb(13 202 240 / 11%);*/
 }
 
 .mainContainer {
-
+    border-bottom: 1px solid rgba(76,74,75,0.33);
     display: flex;
     justify-content: space-between;
     align-items: center
@@ -17,41 +17,48 @@
     border-radius: 10px;
     display: flex;
     list-style-type: none;
+    gap: 5px;
 }
 
 .navContainer{
     border-radius: 10px;
     display: flex;
     align-items: center;
-    background-color: #0dcaf0;
+    /*background-color: #0dcaf0;*/
     height: 100px;
     padding-left: 0;
+
 }
 
 .title {
     text-decoration: none;
     color: black;
     font-size: 55px;
-    background-color: #0dcaf0;
+    /*background-color: #0dcaf0;*/
     height: 100px;
 }
 
 .titleContainer {
     height: 100px;
-    background-color: #0dcaf0;
-    padding: 0 20px;
-    border-radius: 0 0 0 10px;
+    /*background-color: #0dcaf0;*/
+    padding: 0 20px ;
+    border: 2px solid  #0dcaf0;
+    border-radius:10px;
 }
-.listElement{
-    border: none;
+.titleContainer:hover{
     background-color: #0dcaf0;
-    padding:30px;
+}
 
+.listElement{
+    width: 178px;
+    border: 2px solid #0dcaf0;
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 22px;
 }
-.listElement:last-child{
-    border-radius: 0 0 10px 0 ;
-}
+
 
 .listElement:hover {
-    background-color: #17a0d5;
+    background-color: #0dcaf0
 }

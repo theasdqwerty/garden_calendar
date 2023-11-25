@@ -9,29 +9,42 @@ border: 1px solid #a8a7a7;
     width: 80px;
 }
 .selectedButton{
-    color: #006a72;
+    color: #0dcaf0;
     background-color: white;
     margin-top: 10px;
-    width: 210px;
-    border: 2px solid #006a72;
+    width: 234px;
+    border: 2px solid #0dcaf0;
+    border-radius: 5px;
+    height: 50px;
+    font-weight: 600;
 }
 .button{
+    font-weight: 600;
+    border-radius: 5px;
     background-color: #cecbcd;
     color: #4c4a4b;
     margin-top: 10px;
-    width: 210px;
-    border: 2px solid #006a72;
+    width: 234px;
+    border: 2px solid #0dcaf0;
+    height: 50px;
 }
 
 .buttonAdd{
     position: relative;
-    width: 210px;
+    padding: 0 10px;
+    height: 74px;
     border: none;
-    background-color: #006a72;
-    color: white;
+    border-radius: 5px;
+    background-color: #0dcaf0;
+    font-size: 24px;
+    font-weight: 300;
     margin-top: 25px;
 }
+.buttonAdd:hover{
+    opacity: 0.5;
+}
+
 .sectionUseGarden{
-    margin-left: 55px;
+margin-top: 70px;
 }
 
