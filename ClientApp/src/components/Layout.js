@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import { NavMenu } from './NavMenu';
-import style from './layout.module.css'
+import React, {useState} from 'react';
+import {Container} from 'reactstrap';
+import {NavMenu} from './NavMenu';
 
-export class Layout extends Component {
-  static displayName = Layout.name;
-
-  render() {
+export const Layout = ({children, isAutification, setAutification}) =>
+{
     return (
       <div>
-        <NavMenu />
-        <Container
-            // className={style.main}
-            tag="main">
-          {this.props.children}
+        <NavMenu isAutification = {isAutification} setAutification = {setAutification} />
+        <Container>
+            {children}
         </Container>
       </div>
     );
-  }
 }
