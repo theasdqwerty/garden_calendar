@@ -70,7 +70,6 @@ export const ProfileMenu = () => {
         
         
     }
-
     return (
         <div className={style.mainSection}>
             <div className={style.userView}>
@@ -89,9 +88,9 @@ export const ProfileMenu = () => {
                 {/*<h1 className={style.viewHeader}>*/}
                 {/*    пользователь*/}
                 {/*</h1>*/}
-                <h4>
+                <h1>
                     Информация о профиле:
-                </h4>
+                </h1>
                 <div className={style.userInfoLists}>
                     <ul className={style.userInfoList}>
                         <li className={style.userInfoListItem}>Имя:</li>

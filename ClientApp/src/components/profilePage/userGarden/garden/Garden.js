@@ -6,7 +6,7 @@ export const Garden = ({props}) => {
 
     const handleClick = () => {
         const newRow = (
-            <div>
+            <>
                 <tr className={style.tr}>
 
                     <td className={`${style.row} ${style.rowBody}`}>
@@ -22,7 +22,7 @@ export const Garden = ({props}) => {
                     <td className={`${style.row} ${style.rowBody}`}>3</td>
                     <td className={`${style.row} ${style.rowBody}`}>4</td>
                 </tr>
-            </div>
+            </>
 
         );
         setRows(prevRows => [...prevRows, newRow]);
