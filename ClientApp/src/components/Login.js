@@ -81,13 +81,13 @@ export class Login extends Component {
         else
             return(
                 <Container fluid>
-                    <Row>
-                        <Col sm='8'>
+                    <Row className={style.loginRow}>
+                        <Col sm='5'>
                             <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
                                 <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Вход</h3>
                                 <Input className={`${style.input} mb-4 mx-5 w-100`} placeholder='Введите свой email' ref={this.refLogin} label='Email address' id='loginId' type='login' />
                                 <Input className={`${style.input} mb-4 mx-5 w-100`} placeholder='Введите свой пароль' ref={this.refPassword} label='Password' id='passwordId' type='password'/>
-                                <Button type="submit" onClick={this.loginHandler} className="mb-4 px-5 mx-5 w-100 h-auto" color='info'>Войти</Button>
+                                <Button type="submit" onClick={this.loginHandler} className={`${style.button} mb-4 px-5 mx-5 w-100 h-auto`} color='info'>Войти</Button>
                                 <p className="small mb-5 pb-lg-3 ms-5"><a className="text-muted" href="/notfound">Забыли свой пароль?</a></p>
                                 <p className='ms-5'>Еще нет акаунта? <a href="/registration" className="link-info">Пора зарегистрироваться</a></p>
                             </div>

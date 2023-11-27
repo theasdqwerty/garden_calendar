@@ -21,7 +21,8 @@ export class Home extends Component {
         return (
             <section className={style.section}>
                 <div className={style.block}>
-                    <div className={style.headerBlock}>
+
+                    {/*<div className={style.headerBlock}>*/}
                         <div className={style.headerTextBlock}>
                             <h2 className={style.headerTitle}>Создайте свой уникальный календарь!</h2>
                             <p className={style.headerParagraph}>Основываясь на выбранных вами овощах и фруктах вы
@@ -32,8 +33,8 @@ export class Home extends Component {
                         <div className={style.containerImage}>
                             <img className={`${style.headerImage} ${style.headerImageOne}`} src={ovoshi} alt='овощи'/>
                         </div>
-                    </div>
-                    <div className={style.headerBlock}>
+                    {/*</div>*/}
+                    {/*<div className={style.headerBlock}>*/}
                         <div className={style.containerImage}>
                             <img className={`${style.headerImage}  ${style.headerImageTwo}`} src={image1} alt='овощи'/>
                         </div>
@@ -43,7 +44,7 @@ export class Home extends Component {
                                 связанное или это может быть инфа как пользоваться данным сайтом я хз</p>
                             <button className={style.headerButton}>Узнать</button>
                         </div>
-                    </div>
+                    {/*</div>*/}
                 </div>
                 <div>
                     <h3 className={style.info}>Полезная информация про садоводство</h3>

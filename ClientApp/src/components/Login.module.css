@@ -2,3 +2,11 @@
     height: 55px;
     font-size: 25px;
 }
+.loginRow{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    font-size: 25px;
+}

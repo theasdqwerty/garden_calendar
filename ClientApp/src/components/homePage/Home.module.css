@@ -3,71 +3,84 @@
     src: url("../../fonts/MarckScript-Regular.ttf") format("truetype");
     font-weight: normal;
 }
-.section{
+
+.section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
 }
+
 .headerBlock {
     display: flex;
-    /*max-width: 1440px;*/
     justify-content: center;
-    /*margin-top: 50px;*/
     border-radius: 10px;
 }
 
 .containerImage {
-    width: 50%;
+    width: 100%;
 }
+
 .headerImage {
-    /*width: 600px;*/
     width: -webkit-fill-available;
     object-fit: cover
 }
-.headerImageOne{
+
+.headerImageOne {
+    width: 100%;
     border-radius: 0 10px 0 0;
 }
+
 .headerImageTwo {
+    width: 100%;
     border-radius: 0 0 0 10px;
 }
 
 .block {
     margin-top: 75px;
     margin-bottom: 120px;
+    padding: 0 30px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
 }
 
 .headerTextBlock {
-    /*width: 600px;*/
-    width: 50%;
+    width: 100%;
     background-color: rgb(13 202 240 / 11%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.headerTextBlock:first-child{
+
+.headerTextBlock:first-child {
     border-radius: 10px 0 0 0;
 }
-.headerTextBlock:last-child{
+
+.headerTextBlock:last-child {
     border-radius: 0 0 10px 0;
 }
 
 .headerTitle {
     font-family: "Marck Script", Arial, sans-serif;
-    width: 420px;
     font-weight: bold;
-    font-size: 40px;
+    padding: 0 20px;
+    text-align: center; 
+    font-size: 2.3vw;
 }
-.info{
+
+.info {
     font-family: "Marck Script", Arial, sans-serif;
     font-weight: bold;
     font-size: 40px;
 }
 
 .headerParagraph {
-    width: 420px;
-    font-size: 25px;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 1.2vw;
 }
 
 .headerButton {
@@ -76,7 +89,7 @@
     height: 67px;
     border-radius: 11px;
     border: 1px solid #0dcaf0;
-    margin-top: 80px;
+    margin-top: 13px;
     font-size: 20px;
 }
 
@@ -86,21 +99,21 @@
 
 .infoImg {
     border-radius: 10px 10px 0 0;
-    width: 273px;
     height: 224px;
-    object-fit: cover
+    width: 100%;
+    object-fit: cover;
 }
 
 .infoList {
     margin-top: 85px;
     margin-bottom: 200px;
     list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding: 0;
-    gap: 168px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 5%;
 }
 
 
@@ -108,8 +121,10 @@
     background-color: #0dcaf0;
     color: white;
     padding: 16px;
+    display: flex;
     font-size: 16px;
     border-radius: 0 0 10px 10px;
+    justify-content: space-between;
 }
 
 .dropdown {
@@ -159,7 +174,6 @@
 }
 
 .insert {
-    /*width: 1440px;*/
     height: 250px;
     background-color: rgb(13 202 240 / 30%);
     margin-bottom: 150px;
@@ -233,27 +247,28 @@
     font-weight: 600;
 }
 
-.commentList{
+.commentList {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
 }
 
-.commentItem{
+.commentItem {
     border-radius: 10px;
     width: 30%;
-    /*border: 1px solid #0dcaf0;*/
     box-shadow: 1px 2px 4px #585858;
     padding: 20px;
 }
-.insertContainer{
-width: 1600px;
+
+.insertContainer {
+    width: 100%;
 }
 
-.commentParag{
+.commentParag {
     font-size: 25px;
 }
-.commentUser{
+
+.commentUser {
     font-size: 20px;
     font-weight: 600;
 }
