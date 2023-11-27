@@ -70,13 +70,13 @@
 .userView {
     min-width: 450px;
     border-radius: 5px;
-    border: 1px solid rgba(59, 185, 233, 0.41);
+    /*border: 1px solid rgba(59, 185, 233, 0.41);*/
 }
 
 .userInfo {
     min-width: 450px;
     border-radius: 5px;
-    border: 1px solid rgba(59, 185, 233, 0.41);
+    /*border: 1px solid rgba(59, 185, 233, 0.41);*/
 }
 
 .viewHeader {
@@ -87,7 +87,7 @@
 
 .viewAvatar {
     margin-top: 20px;
-    border-bottom: 1px solid rgba(59, 185, 233, 0.41);
+    /*border-bottom: 1px solid rgba(59, 185, 233, 0.41);*/
     display: flex;
     padding-bottom: 20px;
 }
@@ -151,7 +151,7 @@
     border-bottom: 1px solid rgba(59, 185, 233, 0.8);
 }
 .userInfoListItem:first-child{
-    border-top: 1px solid rgba(59, 185, 233, 0.8);
+    /*border-top: 1px solid rgba(59, 185, 233, 0.8);*/
 }
 
 
@@ -166,8 +166,12 @@
     border-bottom: 1px solid rgba(59, 185, 233, 0.8);
 }
 .userInfoSubListItem:first-child{
-    border-top: 1px solid rgba(59, 185, 233, 0.8);
+    /*border-top: 1px solid rgba(59, 185, 233, 0.8);*/
 }
+.userInfoSubListItem:last-child{
+    /*border-bottom: 1px solid rgba(59, 185, 233, 0.8);*/
+}
+
 .buttonsList{
     margin-top: 20px;
     display: flex;

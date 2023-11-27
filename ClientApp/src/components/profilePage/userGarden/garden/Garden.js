@@ -29,7 +29,7 @@ export const Garden = ({props}) => {
     };
 
     return (
-        <div>
+        <div className={style.qqwe}>
 
             <div className={style.block}>
                 <div>

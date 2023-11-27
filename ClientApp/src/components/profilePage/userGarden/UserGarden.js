@@ -19,7 +19,7 @@ export const UserGarden = () => {
     };
 
     return (
-        <div>
+        <div className={style.q}>
             <section className={style.sectionUseGarden}>
                 <div>
                     <button className={style.buttonAdd} onClick={addLine}>Добавить новый сад</button>

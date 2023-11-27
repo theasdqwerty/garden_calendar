@@ -74,9 +74,6 @@ export const ProfileMenu = () => {
     return (
         <div className={style.mainSection}>
             <div className={style.userView}>
-                <h1 className={style.viewHeader}>
-                    пользователь
-                </h1>
                 <div className={style.viewAvatar}>
                     <button className={style.avatarButton}>
                         <img className={style.avatar} src={ava} alt={'аватар пользователя'}/>
@@ -89,9 +86,9 @@ export const ProfileMenu = () => {
 
             </div>
             <div className={style.userInfo}>
-                <h1 className={style.viewHeader}>
-                    пользователь
-                </h1>
+                {/*<h1 className={style.viewHeader}>*/}
+                {/*    пользователь*/}
+                {/*</h1>*/}
                 <h4>
                     Информация о профиле:
                 </h4>

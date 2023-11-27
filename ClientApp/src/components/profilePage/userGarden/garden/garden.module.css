@@ -20,10 +20,11 @@
 
 .block {
     display: flex;
-    right: 300px;
+    left: 50%;
     position: absolute;
-    top: 0;
-    margin-top: 188px;
+    top: 50%;
+    margin-left: -304px;
+    margin-top: -496px;
 }
 .button{
     width: 72px;
@@ -80,4 +81,8 @@
 }
 .list{
     border: none;
+}
+
+.qqwe{
+
 }
