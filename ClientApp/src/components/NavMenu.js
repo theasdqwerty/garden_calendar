@@ -5,11 +5,15 @@ import './NavMenu.css';
 import styleNavMenu from './NavMenu.module.css'
 import  '../fonts/MarckScript-Regular.ttf'
 
-export const NavMenu = () => {
-    const [isAuth, setIsAuth] = useState(false);
-    const onClick = () => {
-        setIsAuth(!isAuth);
+export const NavMenu = ({isAutification, setAutification}) => {
+    const logout = (e) => {
+        e.preventDefault()
+        localStorage.removeItem('accessToken')
+        localStorage.removeItem('userId')
+        
+        setAutification(localStorage.getItem('accessToken') !== null)
     }
+
     return (
         <header className={styleNavMenu.header}>
             <div className={styleNavMenu.mainContainer}>
@@ -18,22 +22,44 @@ export const NavMenu = () => {
                         Календарь садовода
                     </h1>
                 </div>
-                <button onClick={onClick}>
-                    is Auth
-                </button>
                 <div className={styleNavMenu.navContainer}>
                     <div className={styleNavMenu.ulContainer}>
                         <button className={styleNavMenu.listElement}>
                            <NavLink tag={Link}  to="/">Домой</NavLink>
                         </button>
-                        <button className={styleNavMenu.listElement}>
-                            {isAuth ? <NavLink tag={Link} className={` text-dark`} to="/profile/garden"> Мой
-                                огород </NavLink> : <NavLink tag={Link} className={` text-dark`} to="/login">Войти</NavLink>}
-                        </button>
-                        <button className={styleNavMenu.listElement}>
-                            {isAuth ? <NavLink tag={Link} className={` text-dark`} to="/profile">Профиль</NavLink> : <NavLink tag={Link} className={` text-dark`} to="/registration">
-                                Регистрация </NavLink>}
-                        </button>
+                        {
+                            isAutification ?
+                                (
+                                    <>
+                                        <button className={styleNavMenu.listElement}>
+                                            <NavLink tag={Link} to="/profile/garden">Мой огород</NavLink>
+                                        </button>
+                                        <button className={styleNavMenu.listElement}>
+                                            <NavLink tag={Link} to="/profile">Профиль</NavLink>
+                                        </button>
+                                        <button onClick={logout} className={styleNavMenu.listElement}>
+                                            <NavLink tag={Link} to="/">Выйти</NavLink>
+                                        </button>
+                                    </>
+                                ):
+                                (
+                                    <>
+                                        <button className={styleNavMenu.listElement}>
+                                            <NavLink tag={Link} to="/login">Войти</NavLink>
+                                        </button>
+
+                                        <button className={styleNavMenu.listElement}>
+                                            <NavLink tag={Link} to="/registration">Регистрация</NavLink>
+                                        </button>
+                                    </>
+                                )
+                        }
+                        
+                        {/*<button className={styleNavMenu.listElement}>*/}
+                        {/*    {isAutification ? */}
+                        {/*        <NavLink tag={Link} className={` text-dark`} to="/profile">Профиль</NavLink> : */}
+                        {/*        <NavLink tag={Link} className={` text-dark`} to="/registration">Регистрация </NavLink>}*/}
+                        {/*</button>*/}
                     </div>
                 </div>
             </div>

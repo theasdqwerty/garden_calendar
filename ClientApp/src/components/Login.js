@@ -11,11 +11,14 @@ export class Login extends Component {
     static displayName = Login.name;
     state= {navigate: false};
     
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.refLogin = React.createRef();
         this.refPassword = React.createRef();
         this.loginHandler = this.loginHandler.bind(this);
+        this.props = props
+        
+        // console.log(props)
     }
     
     async loginHandler(e)
@@ -72,12 +75,13 @@ export class Login extends Component {
         localStorage.setItem("userId", jsonData.userId)
         
         this.setState({navigate: true});
+        this.props.setAutification(true)
     }
     
     render() {
         const {navigate} = this.state;
         if (navigate)
-            return(<Navigate to="/profile" replace={true}/>)
+            return(<Navigate to="/profile/garden" replace={true}/>)
         else
             return(
                 <Container fluid>

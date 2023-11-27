@@ -1,22 +1,27 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
+const App = () => 
+{
+    const [isAutification, setAutification] = useState(localStorage.getItem('accessToken') !== null)
+    
     return (
-      <Layout>
+      <Layout isAutification = {isAutification} setAutification = {setAutification}>
         <Routes>
           {AppRoutes.map((route, index) => {
-            const { element, ...rest } = route;
-            return <Route key={index} {...rest} element={element} />;
+              
+            const { element, id, ...rest } = route;
+            if (id === 'loginPage')
+                return <Route key={index} {...rest} element={element({isAutification, setAutification})}/>
+                              
+            return <Route key={index} {...rest} element={element} />
           })}
         </Routes>
       </Layout>
     );
-  }
 }
+
+export default App
