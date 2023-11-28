@@ -17,8 +17,6 @@ export class Login extends Component {
         this.refPassword = React.createRef();
         this.loginHandler = this.loginHandler.bind(this);
         this.props = props
-        
-        // console.log(props)
     }
     
     async loginHandler(e)
@@ -47,10 +45,7 @@ export class Login extends Component {
             });
             return;
         }
-        
-        // console.log(auchModel);
-        // return;
-        
+
         let response = await fetch('https://localhost:7135/api/Authentication/login', 
             {
                 method: 'POST',

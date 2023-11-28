@@ -27,6 +27,12 @@ export const NavMenu = ({isAutification, setAutification}) => {
                         <button className={styleNavMenu.listElement}>
                            <NavLink tag={Link}  to="/">Домой</NavLink>
                         </button>
+                        <button className={styleNavMenu.listElement}>
+                            <NavLink tag={Link} to="/profile/garden">Мой огород</NavLink>
+                        </button>
+                        <button className={styleNavMenu.listElement}>
+                            <NavLink tag={Link} to="/profile">Профиль</NavLink>
+                        </button>
                         {
                             isAutification ?
                                 (

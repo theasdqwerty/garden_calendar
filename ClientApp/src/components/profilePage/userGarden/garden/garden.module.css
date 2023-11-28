@@ -2,87 +2,119 @@
     padding: 0;
     margin: 0;
 }
-.tableBlock{
-    display: flex;
-}
-.border {
-    border: 1px solid gray;
-    padding: 0 10px 0 10px;
-}
 
-.select {
-    border: none;
-}
-
-.temp {
-    width: 60px;
-}
-
-.block {
+.main{
     display: flex;
     left: 50%;
     position: absolute;
     top: 50%;
     margin-left: -304px;
-    margin-top: -433px;
+    margin-top: -377px;
+    max-width: 1000px;
+    flex-direction: column;
 }
-.button{
-    width: 72px;
-    height: 112px;
-    border: 2px solid #0dcaf0;
-    background-color: white;
+.scrollTableBody {
+    overflow-y: scroll;
+    max-height: 700px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #adf0ff;
 }
-
-.table {
-    min-width: 770px;
-}
-
-.tableHeadMenu {
-    height: 50px;
-    background-color: #0dcaf0;
-}
-
-.cellHead {
-    border-radius: 3px 0 0 0;
-    padding: 13px 10px;
-    align-self: center;
-}
-
-.cellHead:last-child {
-    border-right: none;
-}
-
-.tr {
-    display: flex;
-}
-
-.row {
-    border-right: 1px solid white;
-    flex: 1 1;
-    text-align: center;
-    align-self: center;
-    height: 112px;
-    padding-top: 34px;
-    font-size: 20px;
-}
-
-.rowBody {
-    border: 1px solid #dad9dc;
-}
-.row:last-child{
-    border-right: none;
-}
-/*.row:first-child{*/
-/*    height: 49px;*/
-/*    padding-top: 13px;*/
-/*}*/
-.rowBody:last-child {
-    border: 1px solid #dad9dc;
-}
-.list{
+.scrollTable table {
+    width:100%;
+    table-layout: fixed;
     border: none;
 }
+.scrollTable thead th {
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background: #00d0fabf;
+    font-size: 20px;
+    border-left: 1px solid #adf0ff;
+    border-right: 1px solid #adf0ff;
+    width: 25%;
+    padding: 32px 25px;
+}
+.scrollTable tbody td {
+    border-left: 1px solid #adf0ff;
+    border-right: 1px solid #adf0ff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: top;
+}
+.scrollTable tbody tr:nth-child(even){
+    background: #53d0ff38;
+}
+.buttonAdd{
+    margin-top: 35px;
+    padding: 10px 69px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0dcaf0;
+    font-size: 24px;
+    font-weight: 300;
+}
+.select{
+    border: none;
+    background-color: transparent;
+}
+.buttonVeg{
+    position: relative;
+    padding: 20px 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0dcaf0;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 25px;
+}
+.buttonVeg:hover{
+    opacity: 0.5;
+}
 
-.qqwe{
+.buttonContainer{
+    display: inline-flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.buttonList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+.options{
 
+}
+.delete{
+    width: 50px;
+    height: 50px;
+}
+.delete:hover{
+    opacity: 0.5;
+}
+.list{
+    overflow-y: scroll;
+    height: 359px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.buttonCulture:hover{
+border: 2px solid rgb(20 92 126 / 86%);
+    cursor: pointer;
+}
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #adf0ff;
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px #13d4ff;
 }

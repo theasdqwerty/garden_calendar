@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import style from './UserGarden.module.css';
 import {Garden} from './garden/Garden';
-import Weather from "../weather/Weather";
+
+
 
 export const UserGarden = () => {
     const [lines, setLines] = useState([]);
@@ -28,11 +29,14 @@ export const UserGarden = () => {
                     <div key={index}>
                         <button
                             className={index === selectedGardenIndex ? style.selectedButton : style.button}
-                            onClick={() => handleGardenClick(index)}
+                            onClick={() => {
+                                handleGardenClick(index)
+                            }}
                         >
                             Сад № {index + 1}
                         </button>
                         {selectedGardenIndex === index && <Garden props={index + 1}/>}
+
                     </div>
                 ))}
             </section>

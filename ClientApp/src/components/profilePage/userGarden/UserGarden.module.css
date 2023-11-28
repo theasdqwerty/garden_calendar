@@ -41,7 +41,7 @@
     background-color: #0dcaf0;
     font-size: 24px;
     font-weight: 300;
-    margin-top: 25px;
+    margin-top: 87px;
 }
 
 .buttonAdd:hover {
@@ -53,6 +53,11 @@
     padding: 30px;
 }
 
-.q {
-
+.buttonModal{
+    padding: 10px 69px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0dcaf0;
+    font-size: 24px;
+    font-weight: 300;
 }
