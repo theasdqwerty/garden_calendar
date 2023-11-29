@@ -19,20 +19,22 @@ export const NavMenu = ({isAutification, setAutification}) => {
             <div className={styleNavMenu.mainContainer}>
                 <div className={styleNavMenu.titleContainer}>
                     <h1 className={`${styleNavMenu.title}`} >
-                        Календарь садовода
+                        <a className={`${styleNavMenu.title}`} href='/'>
+                            Календарь садовода
+                        </a>
                     </h1>
                 </div>
                 <div className={styleNavMenu.navContainer}>
                     <div className={styleNavMenu.ulContainer}>
-                        <button className={styleNavMenu.listElement}>
-                           <NavLink tag={Link}  to="/">Домой</NavLink>
-                        </button>
-                        <button className={styleNavMenu.listElement}>
-                            <NavLink tag={Link} to="/profile/garden">Мой огород</NavLink>
-                        </button>
-                        <button className={styleNavMenu.listElement}>
-                            <NavLink tag={Link} to="/profile">Профиль</NavLink>
-                        </button>
+                        {/*<button className={styleNavMenu.listElement}>*/}
+                        {/*   <NavLink tag={Link}  to="/">Домой</NavLink>*/}
+                        {/*</button>*/}
+                        {/*<button className={styleNavMenu.listElement}>*/}
+                        {/*    <NavLink tag={Link} to="/profile/garden">Мой огород</NavLink>*/}
+                        {/*</button>*/}
+                        {/*<button className={styleNavMenu.listElement}>*/}
+                        {/*    <NavLink tag={Link} to="/profile">Профиль</NavLink>*/}
+                        {/*</button>*/}
                         {
                             isAutification ?
                                 (

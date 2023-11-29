@@ -28,7 +28,9 @@ export class Home extends Component {
                             <p className={style.headerParagraph}>Основываясь на выбранных вами овощах и фруктах вы
                                 получите совершенно уникальный
                                 календарь, который подходит именно для вас</p>
-                            <button className={style.headerButton}>Создать</button>
+                            <a href="/login">
+                                <button className={style.headerButton}>Создать</button>
+                            </a>
                         </div>
                         <div className={style.containerImage}>
                             <img className={`${style.headerImage} ${style.headerImageOne}`} src={ovoshi} alt='овощи'/>
@@ -42,7 +44,9 @@ export class Home extends Component {
                             <h2 className={style.headerTitle}>Узнайте больше о том как сажать картоху</h2>
                             <p className={style.headerParagraph}> Какая-то полезная инфа про садоводство и прочее с этим
                                 связанное или это может быть инфа как пользоваться данным сайтом я хз</p>
-                            <button className={style.headerButton}>Узнать</button>
+                            <a href='/registration'>
+                                <button className={style.headerButton}>Узнать</button>
+                            </a>
                         </div>
                     {/*</div>*/}
                 </div>
@@ -126,8 +130,12 @@ export class Home extends Component {
                     <div className={style.insert}>
                         <h2 className={style.info}> Готовы к нам присоединиться?</h2>
                         <div className={style.buttonContainer}>
-                            <button className={style.whiteButton}>Войти</button>
-                            <button className={style.blueButton}>Зарегистрироваться</button>
+                            <a href='/login'>
+                                <button className={style.whiteButton}>Войти</button>
+                            </a>
+                            <a href='/registration'>
+                                <button className={style.blueButton}>Зарегистрироваться</button>
+                            </a>
                         </div>
                     </div>
                 </div>

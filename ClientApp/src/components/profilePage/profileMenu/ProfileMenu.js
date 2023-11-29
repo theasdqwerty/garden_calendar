@@ -1,5 +1,5 @@
 import style from './profileMenu.module.css'
-import ava from '../../../image/ava.png'
+import ava from '../../../image/popov.png'
 import React, {useEffect, useState} from 'react';
 import Swal from "sweetalert2";
 
@@ -80,7 +80,7 @@ export const ProfileMenu = () => {
 
                 </div>
                 <div className={style.ViewData}>
-                    Гарольд Генадьевич
+                    {`${user.firstName} ${user.lastName}`}
                 </div>
 
             </div>

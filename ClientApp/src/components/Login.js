@@ -53,24 +53,25 @@ export class Login extends Component {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(auchModel)
-            });
+            })
 
         let jsonData = await response.json();
         if (!response.ok)
         {
             Swal.fire({
                 title: "Иформация",
-                text: jsonData.join('\n'),
+                text: jsonData.value,
                 icon: "error"
             });
-            return;
         }
-        
-        localStorage.setItem("accessToken", jsonData.token)
-        localStorage.setItem("userId", jsonData.userId)
-        
-        this.setState({navigate: true});
-        this.props.setAutification(true)
+        else
+        {
+            localStorage.setItem("accessToken", jsonData.token)
+            localStorage.setItem("userId", jsonData.userId)
+
+            this.setState({navigate: true});
+            this.props.setAutification(true)
+        }
     }
     
     render() {
