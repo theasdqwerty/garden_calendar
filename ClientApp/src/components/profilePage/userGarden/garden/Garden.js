@@ -71,7 +71,6 @@ export const Garden = () => {
                         <th>Максимальная температура</th>
                         <th>Влажность почвы</th>
                         <th></th>
-
                     </tr>
                     </thead>
                 </table>
