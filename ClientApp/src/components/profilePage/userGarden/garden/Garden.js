@@ -1,50 +1,46 @@
 import style from './garden.module.css';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {Modal} from "../../../modal/Modal";
 import React from "react";
-import {data} from "../../data";
 import trash from '../../../../image/trash.png'
 
-export const Garden = () => {
-    const [rows, setRows] = useState([]);
+export const Garden = ({plants, garden, saveHandler}) => {
+    const [rows, setRows] = useState(garden.plants);
     const [isModal, setModal] = useState(false);
-    const vegetables = data.map((item) => item.name);
+    const vegetables = plants;
 
-    //============================================================
-    const example = {
-        minT: 12,
-        maxT: 33,
-        vlajnost: 99,
-    };
-    //============================================================
+    useEffect(() => {
+        garden.plants = rows.filter(r => r.id !== undefined);
+    }, [rows]);
 
     const addRow = () => {
         const newRow = {
-            culture: "Выбрать культуру",
-            minTemperature: "",
-            maxTemperature: "",
-            soilMoisture: "",
+            name: "Выбрать культуру",
+            recommendation: "",
         };
         setRows((prevRows) => [...prevRows, newRow]);
     };
 
     const handleCultureChange = (vegetable) => {
+        // console.log("vegetable", vegetable)
         const emptyRowIndex = rows.findIndex(
-            (row) => row.culture === "Выбрать культуру"
-        );
-        if (emptyRowIndex !== -1) {
-            const selectedVegetable = data.find((item) => item.name === vegetable);
-            if (selectedVegetable) {
-                const updatedRow = {
+            (row) => row.name === "Выбрать культуру");
+        if (emptyRowIndex !== -1) 
+        {
+            const selectedVegetable = plants.find((item) => item.name === vegetable.name);
+            if (selectedVegetable) 
+            {
+                const updatedRow = { 
                     ...rows[emptyRowIndex],
-                    culture: vegetable,
-                    minTemperature: selectedVegetable.minTemperaturaForPlanting,
-                    maxTemperature: selectedVegetable.maxTemperaturaForPlanting,
-                    soilMoisture: example.vlajnost,
+                    id: vegetable.id,
+                    name: vegetable.name,
+                    recommendation: vegetable.recommendation
                 };
+                
                 const updatedRows = [...rows];
                 updatedRows[emptyRowIndex] = updatedRow;
                 setRows(updatedRows);
+                garden.plants = rows.filter(r => r.id !== undefined);
             }
         }
         setModal(false);
@@ -63,14 +59,12 @@ export const Garden = () => {
     return (
         <div className={style.main}>
             <div className={style.scrollTable}>
-                <table>
+                <table className={style.table}>
                     <thead>
                     <tr>
-                        <th>Культура</th>
-                        <th>Минимальная температура</th>
-                        <th>Максимальная температура</th>
-                        <th>Влажность почвы</th>
-                        <th></th>
+                        <th className={style.cultureColumn}>Культура</th>
+                        <th>Рекомендации</th>
+                        <th width='105px'></th>
                     </tr>
                     </thead>
                 </table>
@@ -80,12 +74,10 @@ export const Garden = () => {
                     {rows.map((row, index) => (
                         <tr key={index}>
                             <td className={style.buttonCulture} onClick={handleModalOpen}>
-                                {row.culture}
+                                {row.name}
                             </td>
-                            <td>{row.minTemperature}</td>
-                            <td>{row.maxTemperature}</td>
-                            <td>{row.soilMoisture}</td>
-                            <td>
+                            <td>{row.recommendation}</td>
+                            <td className={style.trash}>
                                 <img
                                     className={style.delete}
                                     src={trash}
@@ -103,7 +95,7 @@ export const Garden = () => {
                 <button className={style.buttonAdd} onClick={addRow}>
                     Добавить
                 </button>
-                <button className={style.buttonAdd}>
+                <button className={style.buttonAdd} onClick={saveHandler}>
                     Сохранить
                 </button>
             </div>
@@ -116,12 +108,10 @@ export const Garden = () => {
                     <div className={style.list}>
                         <ul className={style.buttonList}>
                             {vegetables.map((vegetable, index) => (
-                                <li
-                                    className={style.buttonVeg}
-                                    key={index}
-                                    onClick={() => handleCultureChange(vegetable)}
-                                >
-                                    {vegetable}
+                                <li className={style.buttonVeg}
+                                    key={vegetable.id}
+                                    onClick={() => handleCultureChange(vegetable)}>
+                                    {vegetable.name}
                                 </li>
                             ))}
                         </ul>

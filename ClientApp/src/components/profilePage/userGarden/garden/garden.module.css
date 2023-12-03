@@ -3,6 +3,14 @@
     margin: 0;
 }
 
+.cultureColumn{
+    width: 250px;
+}
+
+.recomendationColumn{
+    width: 500px;
+}
+
 .main{
     display: flex;
     left: 50%;
@@ -10,7 +18,7 @@
     top: 50%;
     margin-left: -304px;
     margin-top: -430px;
-    max-width: 1000px;
+    /*max-width: 1000px;*/
     flex-direction: column;
 }
 .scrollTableBody {
@@ -19,9 +27,14 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #adf0ff;
 }
+
+.scrollTable
+{
+    width: 1050px;
+}
+
 .scrollTable table {
     width:100%;
-    table-layout: fixed;
     border: none;
 }
 .scrollTable thead th {
@@ -32,7 +45,7 @@
     font-size: 20px;
     border-left: 1px solid #adf0ff;
     border-right: 1px solid #adf0ff;
-    width: 25%;
+    /*width: 25%;*/
     padding: 32px 25px;
 }
 .scrollTable tbody td {
@@ -104,6 +117,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+.buttonCulture{
+    width: 250px;
+}
+
+.trash{
+    width: 100px;
+}
+
+
 .buttonCulture:hover{
 border: 2px solid rgb(20 92 126 / 86%);
     cursor: pointer;
